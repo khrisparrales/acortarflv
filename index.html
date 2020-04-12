@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" type="text/css" href=./style.css>
+    <title>Acortar AnimeFLV</title>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+
+                <ion-title size="large">Acortar link de AnimeFLV</ion-title>
+
+            </ion-toolbar>
+
+        </ion-header>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-card>
+                            <ion-card-header>
+                                Coloque link de descarga
+                            </ion-card-header>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-input id="productname" placeholder="LINK"></ion-input>
+
+                                </ion-item>
+
+                                <ion-button id="buttonsave" fill="outline">
+                                    <ion-icon name="lock-open-outline" slot="start"></ion-icon>
+                                    </ion-icon>
+                                    Acortar </ion-button>
+                                <ion-button id="buttondelete" color="danger">
+                                    <ion-icon name="trash" slot=start>
+                                    </ion-icon>Limpiar</ion-button>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-list id="productlist">
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-content>
+    </ion-app>
+    <!--setcion-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
