@@ -34,8 +34,7 @@ buttonsave.addEventListener('click', () => {
         nq = url.includes("%2F");
     }
     createnewproduct(url);
-    total += +price;
-    totalouput.textContent = total;
+
     clearinputs();
 });
 
@@ -51,7 +50,7 @@ const createnewproduct = (name) => {
 
 const clearinputs = () => {
     productname.value = '';
-    productprice.value = '';
+
 }
 
 buttondelete.addEventListener('click', clearinputs);
