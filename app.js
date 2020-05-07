@@ -37,16 +37,56 @@ buttonsave.addEventListener('click', () => {
 
     clearinputs();
 });
-
+var tablamovie = document.getElementById('tablemovie');
+tablamovie.innerHTML = "";
 const createnewproduct = (name) => {
 
-    const ioncard = document.createElement('ion-card');
-    const newproductitem = document.createElement('ion-card-content');
-    newproductitem.textContent = name;
-    ioncard.appendChild(newproductitem);
-    productlist.appendChild(ioncard)
+
+    tablamovie.innerHTML += ` <tr>
+                    
+                    <td >${name}</td>    
+                    <td>
+<button  class="btn" data-clipboard-text="${name}"  color: "red">
+    Copiar 
+    <ion-icon  size="small" name="copy"></ion-icon>
+
+</button></td>                
+                     
+                </tr>`
+
 
 };
+var clipboard = new ClipboardJS('.btn');
+
+clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});
+
+function copiar(name) {
+    /* Get the text field */
+    const alert = document.createElement('ion-alert')
+
+    var copyText = document.getElementById("myInput");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+}
 
 const clearinputs = () => {
     productname.value = '';
